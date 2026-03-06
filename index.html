@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEED | Global Education & Empowerment Development</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        /* Specific Home Page Styles */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+            /* Account for sticky header */
+        }
+
+        /* Homepage Header Visibility Over Hero */
+        #header:not(.sticky) .logo,
+        #header:not(.sticky) nav a,
+        #header:not(.sticky) .theme-toggle {
+            color: #ffffff !important;
+        }
+
+        #header:not(.sticky) nav a::before {
+            background-color: #ffffff;
+        }
+
+        #header:not(.sticky) .logo i {
+            color: var(--primary-color);
+            /* Keep the icon blue for brand recognition */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .mission-section {
+            background-color: var(--bg-color);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mission-img img {
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(0);
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .mission-img:hover img {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .mission-text h2 {
+            color: var(--primary-color);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .projects-preview {
+            background-color: transparent;
+            /* Allow global background animations to show through */
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 2rem;
+        }
+
+        .project-card-colored {
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 300px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-card-colored:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card-colored h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .project-card-colored p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .project-card-colored.teal {
+            background: linear-gradient(135deg, var(--secondary-color), #2ab19d);
+        }
+
+        .project-card-colored.blue {
+            background: linear-gradient(135deg, var(--primary-color), #2689cf);
+        }
+
+        .project-card-colored.orange {
+            background: linear-gradient(135deg, var(--accent-color), #e67e22);
+        }
+
+        /* Dark Mode Refinements for Project Cards */
+        [data-theme="dark"] .project-card-colored.teal {
+            background: linear-gradient(135deg, #0d3d3a, #115e59);
+        }
+
+        [data-theme="dark"] .project-card-colored.blue {
+            background: linear-gradient(135deg, #163073, #1e40af);
+        }
+
+        [data-theme="dark"] .project-card-colored.orange {
+            background: linear-gradient(135deg, #7c2d12, #9a3412);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" class="active" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.8rem; margin-top: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content fade-in">
+            <h1 data-i18n="hero_title">Bildung & Stärkung für eine bessere Zukunft</h1>
+            <p data-i18n="hero_subtitle">Wir unterstützen Gemeinschaften durch Bildung, digitale Kompetenzen und
+                nachhaltige
+                Entwicklungsprojekte.</p>
+            <div class="hero-btns">
+                <a href="programs.html" class="btn btn-primary" data-i18n="hero_cta_primary">Unsere Programme</a>
+                <a href="about.html" class="btn btn-outline" style="color: white; border-color: white;"
+                    data-i18n="hero_cta_secondary">Mehr erfahren</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container mission-grid">
+            <div class="mission-text fade-in">
+
+                <h2 data-i18n="mission_title">Hoffnung durch Handeln schenken</h2>
+                <p data-i18n="mission_text">GEED steht für nachhaltige Unterstützung und Bildung für Menschen in Not.
+                    Unsere Arbeit verbindet Lernen, Entwicklung und internationale humanitäre Hilfe.
+                    <br>Bei GEED (Global Education & Empowerment Development) glauben wir daran, dass jeder Mensch eine
+                    Chance verdient, sich zu entfalten. Unsere Mission ist es, Armut zu lindern, Bildung zu verbessern
+                    und gefährdeten Gemeinschaften weltweit entscheidende Unterstützung zu bieten.
+                </p>
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-book-open feature-icon"></i>
+                        <h4 data-i18n="feature_edu_title">Bildungsförderung</h4>
+                        <p data-i18n="feature_edu_text">Bereitstellung von Stipendien und Schulmaterialien für
+                            benachteiligte Kinder.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-hand-holding-heart feature-icon"></i>
+                        <h4 data-i18n="feature_aid_title">Hilfsprogramme</h4>
+                        <p data-i18n="feature_aid_text">Lieferung von Nahrungsmitteln, Unterkünften und medizinischer
+                            Versorgung in Krisenzeiten.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mission-img-container"
+                style="position: relative; padding: 2rem; overflow: visible; display: flex; justify-content: center; align-items: center; min-height: 450px;">
+                <!-- Animated Background Glow -->
+                <div
+                    style="position: absolute; width: 120%; height: 120%; background: radial-gradient(circle at center, rgba(46, 163, 242, 0.05) 0%, transparent 70%);">
+                </div>
+
+                <div class="animated-tree"
+                    style="position: relative; display: flex; flex-direction: column; align-items: center; z-index: 5;">
+                    <!-- Tree Trunk / Symbol of Strength -->
+                    <div class="tree-trunk"
+                        style="font-size: 15rem; color: #48bb78; animation: treeSway 5s ease-in-out infinite;">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <!-- Floating Intelligent Icons -->
+                    <div class="floating-elements"
+                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
+                        <i class="fa-solid fa-book-open"
+                            style="position: absolute; top: -15%; left: -10%; font-size: 3rem; color: var(--primary-color); animation: elementFloat 4s ease-in-out infinite;"></i>
+                        <i class="fa-solid fa-gear"
+                            style="position: absolute; top: 15%; right: -15%; font-size: 2.5rem; color: var(--secondary-color); animation: elementFloat 6s ease-in-out infinite 1s; opacity: 0.8;"></i>
+                        <i class="fa-solid fa-graduation-cap"
+                            style="position: absolute; bottom: 40%; left: -30%; font-size: 3rem; color: var(--accent-color); animation: elementFloat 5s ease-in-out infinite 0.5s;"></i>
+                        <i class="fa-solid fa-globe"
+                            style="position: absolute; bottom: 5%; right: -25%; font-size: 3rem; color: var(--primary-color); animation: elementFloat 7s ease-in-out infinite 1.5s; opacity: 0.7;"></i>
+                    </div>
+                </div>
+
+                <style>
+                    @keyframes treeSway {
+
+                        0%,
+                        100% {
+                            transform: rotate(-2deg) scale(1.05);
+                        }
+
+                        50% {
+                            transform: rotate(2deg) scale(1.1);
+                        }
+                    }
+
+                    @keyframes elementFloat {
+
+                        0%,
+                        100% {
+                            transform: translateY(0) rotate(0deg);
+                        }
+
+                        50% {
+                            transform: translateY(-20px) rotate(10deg);
+                        }
+                    }
+
+                    .feature-card:hover .feature-icon {
+                        transform: scale(1.2) translateY(-5px);
+                        color: var(--accent-color);
+                    }
+
+                    .feature-icon {
+                        transition: all 0.3s ease;
+                    }
+                </style>
+            </div>
+
+            <style>
+                @keyframes floatIcon {
+
+                    0%,
+                    100% {
+                        transform: translateY(0) rotate(0deg);
+                    }
+
+                    50% {
+                        transform: translateY(-15px) rotate(2deg);
+                    }
+                }
+
+                @keyframes pulseGlow {
+
+                    0%,
+                    100% {
+                        transform: scale(1);
+                        opacity: 0.6;
+                    }
+
+                    50% {
+                        transform: scale(1.15);
+                        opacity: 0.9;
+                    }
+                }
+
+                @keyframes floatSubIcon1 {
+
+                    0%,
+                    100% {
+                        transform: translateY(0) rotate(-5deg);
+                        filter: brightness(1);
+                    }
+
+                    50% {
+                        transform: translateY(-8px) rotate(5deg);
+                        filter: brightness(1.1);
+                    }
+                }
+
+                @keyframes floatSubIcon2 {
+
+                    0%,
+                    100% {
+                        transform: translateY(0) scale(1);
+                        filter: brightness(1);
+                    }
+
+                    50% {
+                        transform: translateY(10px) scale(1.1);
+                        filter: brightness(1.1);
+                    }
+                }
+            </style>
+        </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Preview -->
+    <section class="projects-preview">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="index_featured_title">Engagement, das Menschen stärkt</h2>
+            <div class="projects-grid">
+
+                <div class="project-card-colored teal fade-in">
+                    <h3 data-i18n="index_proj1_title">Digitale Teilhabe</h3>
+                    <p data-i18n="index_proj1_text">
+                        Wir machen digitale Bildung für alle zugänglich. Durch praxisnahe IT-Schulungen helfen wir beim
+                        Einstieg in
+                        die digitale Welt. So entstehen neue Möglichkeiten für Arbeit, Lernen und gesellschaftliche
+                        Teilhabe.
+                    </p>
+                </div>
+
+                <div class="project-card-colored blue fade-in delay-100">
+                    <h3 data-i18n="index_proj2_title">Globale Hilfe</h3>
+                    <p data-i18n="index_proj2_text">
+                        Wir bringen Hilfsgüter dorthin, wo sie gebraucht werden. Unsere Projekte unterstützen Menschen
+                        mit
+                        lebenswichtigen Ressourcen und medizinischer Hilfe. Dabei setzen wir auf Zusammenarbeit,
+                        Fairness und schnelle Hilfe.
+                    </p>
+                </div>
+
+                <div class="project-card-colored orange fade-in delay-200">
+                    <h3 data-i18n="index_proj3_title">Persönliche Entwicklung</h3>
+                    <p data-i18n="index_proj3_text">
+                        Wir begleiten Menschen auf ihrem Weg zu mehr
+                        Selbstvertrauen und Orientierung. Durch Beratung und Workshops fördern wir berufliche und
+                        persönliche Stärken. So schaffen wir Perspektiven für Zukunft und Alltag.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; padding: 6rem 0;">
+        <div class="container fade-in">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary-color);" data-i18n="index_cta_h2">
+                Ihre Unterstützung macht
+                einen Unterschied</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9;"
+                data-i18n="index_cta_p">
+                Jede Spende fließt direkt in die Finanzierung unserer Projekte und hilft Gemeinden in Not. Schließen Sie
+                sich uns noch heute an.</p>
+            <a href="donate.html" class="btn btn-accent" style="font-size: 1.2rem; padding: 1rem 3.5rem;"
+                data-i18n="btn_donate">Jetzt
+                Spenden</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Programme | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-img {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.08);
+            /* slight inner scale for depth */
+        }
+
+        .project-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-content p {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .impact-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .impact-stats div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .impact-stats span {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .project-content .btn {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" class="active" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="page_title_programs">Unsere Programme</h1>
+            <p style="max-width: 700px; margin: 0 auto;" data-i18n="prog_header_p">Entdecken Sie die Initiativen, die
+                weltweit positive
+                Veränderungen vorantreiben. Ihre Unterstützung macht diese Projekte möglich.</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section>
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <div class="project-category" data-i18n="prog_card1_cat">Bildung</div>
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Schüler im Klassenzimmer">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="prog_card1_h3">Sprachkurse</h3>
+                        <p data-i18n="prog_card1_p">Sprachkurse zur Verbesserung der Kommunikation im Alltag, Berufs und
+                            Bildung.</p>
+
+
+                        <div class="project-actions" style="margin-top: 1.5rem;">
+                            <a href="programmdetail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center; padding: 0.8rem 0; font-size: 1rem;"
+                                data-i18n="btn_more">Mehr
+                                erfahren</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in delay-100">
+                    <div class="project-img">
+                        <div class="project-category" style="background-color: var(--secondary-color);"
+                            data-i18n="prog_card2_cat">Digital</div>
+                        <img src="images/gallery_it_learning.jpg" alt="Teilnehmerin lernt am Laptop">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="prog_card2_h3">Digital Kompotenzen und IT-Kurse</h3>
+                        <p data-i18n="prog_card2_p">Praxisnahe Kurse für wichtige digitale und IT-Fähigkeiten für Beruf
+                            und Alltag.</p>
+
+
+                        <div class="project-actions" style="margin-top: 1.5rem;">
+                            <a href="programmdetail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center; padding: 0.8rem 0; font-size: 1rem;"
+                                data-i18n="btn_more">Mehr
+                                erfahren</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in delay-200">
+                    <div class="project-img">
+                        <div class="project-category" style="background-color: #3b82f6;" data-i18n="prog_card3_cat">
+                            Selbstentwicklung</div>
+                        <img src="https://images.unsplash.com/photo-1524069290683-0457abfe42c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Kind trinkt sauberes Wasser">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="prog_card3_h3">Persönliche Entwicklungskurse</h3>
+                        <p data-i18n="prog_card3_p">Kurse zur Stärkung von Selbstvertrauen, Kommunikation und
+                            persönlichen Fähigkeiten.</p>
+
+
+                        <div class="project-actions" style="margin-top: 1.5rem;">
+                            <a href="programmdetail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center; padding: 0.8rem 0; font-size: 1rem;"
+                                data-i18n="btn_more">Mehr
+                                erfahren</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our Values Section -->
+                <div class="values-section fade-in"
+                    style="grid-column: 1 / -1; background-color: var(--card-bg); padding: 3.5rem; border-radius: 20px; border: 1px solid var(--border-color); margin-top: 3rem; box-shadow: var(--shadow);">
+                    <h2 style="color: var(--primary-color); font-size: 2.8rem; margin-bottom: 2rem; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem;"
+                        data-i18n="prog_mission_h2">
+                        Unsere Mission & Vision</h2>
+                    <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-color); margin-bottom: 1.2rem; max-width: 800px;"
+                        data-i18n="prog_mission_p1">
+                        Wir glauben an eine Zukunft, in der alle Menschen Zugang zu Bildung, digitalen Fähigkeiten und
+                        persönlicher Entwicklung haben.</p>
+                    <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-color); margin-bottom: 2.5rem; max-width: 800px;"
+                        data-i18n="prog_mission_p2">
+                        Durch unsere gezielten Projekte stärken wir Gemeinschaften von innen heraus und fördern so eine
+                        gerechtere, selbstbestimmte Zukunft für alle Menschen.</p>
+
+                    <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <img src="images/values_illustration_empowerment.png" alt="Empowerment Illustration"
+                                style="width: 100%; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.02)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 300px; background: var(--values-gradient); color: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; letter-spacing: 1px;"
+                                data-i18n="prog_values_h3">„Unsere Werte“
+                            </h3>
+                            <ul
+                                style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin: 0; padding: 0;">
+                                <li
+                                    style="display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; font-weight: 500;">
+                                    <i class="fa-solid fa-circle-check"></i> <span
+                                        data-i18n="prog_value1">Chancengleichheit</span>
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; font-weight: 500;">
+                                    <i class="fa-solid fa-circle-check"></i> <span
+                                        data-i18n="prog_value2">Empowerment</span>
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; font-weight: 500;">
+                                    <i class="fa-solid fa-circle-check"></i> <span data-i18n="prog_value3">Respekt &
+                                        Vielfalt</span>
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; font-weight: 500;">
+                                    <i class="fa-solid fa-circle-check"></i> <span data-i18n="prog_value4">Bildung für
+                                        alle</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programs Offer Section -->
+                <div class="programs-offer-section fade-in"
+                    style="grid-column: 1 / -1; background-color: var(--card-bg); padding: 3.5rem; border-radius: 20px; border: 1px solid var(--border-color); margin-top: 3rem; box-shadow: var(--shadow);">
+                    <h2 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1.5rem;"
+                        data-i18n="prog_offer_h2">Was bieten unsere
+                        Programme?</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-color); margin-bottom: 2rem; max-width: 900px;"
+                        data-i18n="prog_offer_p">
+                        Unsere Programme sind praxisnah, inklusiv und auf die Bedürfnisse der Teilnehmenden abgestimmt.
+                        Wir unterstützen Menschen dabei
+                        , neue Fähigkeiten zu entwickeln und die Zukunft aktiv zu gestalten.</p>
+
+                    <ul
+                        style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 0; padding: 0;">
+                        <li
+                            style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 1.1rem; color: var(--text-color);">
+                            <i class="fa-solid fa-square-check"
+                                style="color: var(--secondary-color); font-size: 1.3rem; margin-top: 0.2rem;"></i>
+                            <span data-i18n="prog_offer1">Praxisorientierter Unterricht</span>
+                        </li>
+                        <li
+                            style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 1.1rem; color: var(--text-color);">
+                            <i class="fa-solid fa-square-check"
+                                style="color: var(--secondary-color); font-size: 1.3rem; margin-top: 0.2rem;"></i>
+                            <span data-i18n="prog_offer2">Erfahrene Trainerinnen und Trainer.</span>
+                        </li>
+                        <li
+                            style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 1.1rem; color: var(--text-color);">
+                            <i class="fa-solid fa-square-check"
+                                style="color: var(--secondary-color); font-size: 1.3rem; margin-top: 0.2rem;"></i>
+                            <span data-i18n="prog_offer3">Zukunftsorientierte Fähigkeiten.</span>
+                        </li>
+                        <li
+                            style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 1.1rem; color: var(--text-color);">
+                            <i class="fa-solid fa-square-check"
+                                style="color: var(--secondary-color); font-size: 1.3rem; margin-top: 0.2rem;"></i>
+                            <span data-i18n="prog_offer4">Unterstützung beim Lernen und Entwickeln.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

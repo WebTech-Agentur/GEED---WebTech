@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-blocks {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .info-block {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            background-color: rgba(240, 123, 63, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .info-text h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.2rem;
+        }
+
+        .info-text p {
+            margin: 0;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="page_title_contact">Kontaktieren Sie uns</h1>
+            <p style="max-width: 700px; margin: 0 auto;" data-i18n="contact_hero_p">Haben Sie eine Frage, einen
+                Vorschlag oder möchten Sie einfach
+                nur Hallo sagen? Wir würden uns freuen, von Ihnen zu hören. Kontaktieren Sie unser Team über das
+                untenstehende Formular.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="container contact-container">
+
+            <div class="contact-info-blocks fade-in">
+
+                <div class="info-block">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-i18n="contact_hq_h4">Hauptsitz</h4>
+                        <p data-i18n="contact_hq_address">Charity Lane 123, Hope City, HC 12345</p>
+                    </div>
+                </div>
+
+                <div class="info-block delay-100">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-i18n="contact_email_h4">Schreiben Sie uns</h4>
+                        <p>info@geed-charity.org</p>
+                        <p>support@geed-charity.org</p>
+                    </div>
+                </div>
+
+                <div class="info-block delay-200">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4 data-i18n="contact_phone_h4">Rufen Sie uns an</h4>
+                        <p>+1 (555) 123-4567</p>
+                        <p data-i18n="contact_hours">Mo - Fr, 9:00 - 17:00 Uhr</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem;" data-i18n="contact_follow_h4">Folgen Sie unserer Reise:</h4>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" style="background-color: var(--primary-color);"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="background-color: var(--primary-color);"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" style="background-color: var(--primary-color);"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="background-color: var(--primary-color);"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contact-form fade-in delay-200">
+                <h3 data-i18n="contact_form_h3">Senden Sie uns eine Nachricht</h3>
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Nachricht gesendet! Wir werden uns bald bei Ihnen melden.');">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact_label_name">Ihr Name</label>
+                        <input type="text" id="name" required placeholder="Max Mustermann"
+                            data-i18n-placeholder="contact_ph_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact_label_email">E-Mail-Adresse</label>
+                        <input type="email" id="email" required placeholder="max@beispiel.de"
+                            data-i18n-placeholder="contact_ph_email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" data-i18n="contact_label_subject">Betreff</label>
+                        <input type="text" id="subject" required placeholder="Wie können wir helfen?"
+                            data-i18n-placeholder="contact_ph_subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact_label_message">Nachricht</label>
+                        <textarea id="message" required placeholder="Schreiben Sie Ihre Nachricht hier..."
+                            data-i18n-placeholder="contact_ph_message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"
+                        data-i18n="contact_btn_submit">Nachricht senden</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung and die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

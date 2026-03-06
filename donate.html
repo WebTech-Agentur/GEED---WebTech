@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spenden | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .donate-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: linear-gradient(rgba(18, 24, 38, 0.8), rgba(18, 24, 38, 0.8)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        .donate-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donate-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .impact-explanation h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-explanation p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-list {
+            margin-top: 2rem;
+        }
+
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .impact-list i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .donation-widget {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .donation-widget h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .donation-amounts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .amount-btn {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--text-color);
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .amount-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(46, 163, 242, 0.3);
+            border-color: transparent;
+        }
+
+        .amount-btn.selected {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.02);
+            border-color: transparent;
+        }
+
+        .custom-amount {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .custom-amount:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .frequency-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .freq-btn {
+            background: transparent;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition-speed);
+        }
+
+        .freq-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Header override for hero section readability */
+        #header:not(.sticky) .nav-container a,
+        #header:not(.sticky) .nav-container i {
+            color: white !important;
+        }
+
+        @media (max-width: 768px) {
+            .donate-content {
+                grid-template-columns: 1fr;
+            }
+
+            .donation-widget {
+                padding: 2rem;
+            }
+
+            .donation-amounts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .donation-amounts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Donate Hero -->
+    <section class="donate-hero fade-in">
+        <div class="container">
+            <h1 data-i18n="page_title_donate">Unterstützen Sie uns</h1>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; opacity: 0.9;" data-i18n="donate_hero_p">
+                Ihre Großzügigkeit hilft uns,
+                Hoffnung, Bildung und Ressourcen dorthin zu bringen, wo sie am dringendsten benötigt werden. 100% Ihrer
+                Spende werden sicher verarbeitet und transparent verwendet.</p>
+        </div>
+    </section>
+
+    <!-- Donate Content -->
+    <section>
+        <div class="container donate-content">
+
+            <div class="impact-explanation fade-in">
+                <h2 data-i18n="donate_impact_h2">Wie Ihre Spende hilft</h2>
+                <p data-i18n="donate_impact_p1">Wenn Sie an GEED spenden, geben Sie nicht nur Geld; Sie investieren in
+                    die Zukunft von Einzelpersonen
+                    und Gemeinschaften. Wir planen und führen unsere Projekte sorgfältig durch, um eine maximale Wirkung
+                    zu erzielen.
+                </p>
+                <p data-i18n="donate_impact_p2">Wir glauben an volle Transparenz. Unsere Finanzberichte sind öffentlich
+                    zugänglich, sodass Sie genau
+                    sehen können, wie Ihre Beiträge Leben verändern.</p>
+
+                <ul class="impact-list">
+                    <li>
+                        <i class="fa-solid fa-book"></i>
+                        <span data-i18n="donate_impact_li1"><strong>25 €</strong> finanzieren Lehrbücher und
+                            Schulmaterial für ein Kind für ein ganzes
+                            Jahr.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-kit-medical"></i>
+                        <span data-i18n="donate_impact_li2"><strong>50 €</strong> versorgen eine ländliche Klinik mit
+                            lebenswichtigen
+                            Notfallmedikamenten.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-faucet-drip"></i>
+                        <span data-i18n="donate_impact_li3"><strong>100 €</strong> helfen, die Infrastruktur für
+                            sauberes Wasser für ein Dorf instand
+                            zu halten.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span data-i18n="donate_impact_li4"><strong>500 €</strong> tragen maßgeblich zum Bau sicherer
+                            Unterkünfte für vertriebene
+                            Familien bei.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="donation-widget fade-in delay-200">
+                <h3 data-i18n="donate_widget_h3">Spendenbetrag wählen</h3>
+
+                <div class="frequency-toggle">
+                    <button class="freq-btn active" onclick="toggleFreq('once')"
+                        data-i18n="donate_freq_once">Einmalig</button>
+                    <button class="freq-btn" onclick="toggleFreq('monthly')"
+                        data-i18n="donate_freq_monthly">Monatlich</button>
+                </div>
+
+                <div class="donation-amounts">
+                    <button class="amount-btn selected" onclick="selectAmount(this, 25)">25 €</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 50)">50 €</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 100)">100 €</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 250)">250 €</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 500)">500 €</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 1000)">1.000 €</button>
+                </div>
+
+                <input type="number" class="custom-amount" placeholder="Anderer Betrag (€)"
+                    data-i18n-placeholder="donate_custom_placeholder" id="custom-amount-input">
+
+                <button class="btn btn-accent" style="width: 100%; font-size: 1.2rem; padding: 1.2rem;"
+                    data-i18n="donate_btn_submit">Spende
+                    abschließen</button>
+
+                <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-color); opacity: 0.7;"
+                    data-i18n="donate_secure_text">
+                    <i class="fa-solid fa-lock"></i> Sichere Zahlungsabwicklung
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple JS for donation widget interaction
+        function selectAmount(btn, amount) {
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            document.getElementById('custom-amount-input').value = amount;
+        }
+
+        function toggleFreq(freq) {
+            document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Initialize custom amount to match default selected button
+        document.getElementById('custom-amount-input').value = 25;
+    </script>
+</body>
+
+</html>

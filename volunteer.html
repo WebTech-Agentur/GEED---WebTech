@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freiwilligenarbeit | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .volunteer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .volunteer-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .volunteer-info p {
+            margin-bottom: 1.5rem;
+        }
+
+        .perks-list {
+            margin-top: 2rem;
+        }
+
+        .perks-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .perks-list i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .form-container {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-container h3 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        @media (max-width: 900px) {
+            .volunteer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="vol_hero_h1">Werden Sie Freiwilliger</h1>
+            <p style="max-width: 700px; margin: 0 auto;" data-i18n="vol_hero_p">Geben Sie Ihre Zeit und Ihre
+                Fähigkeiten, um einen echten
+                Unterschied zu machen. Treten Sie unserem globalen Netzwerk engagierter Freiwilliger bei.</p>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section>
+        <div class="container volunteer-container">
+
+            <div class="volunteer-info fade-in">
+                <h2 data-i18n="vol_why_h2">Warum GEED beitreten?</h2>
+                <p data-i18n="vol_why_p">Freiwilligenarbeit bei GEED bedeutet mehr als nur mitzuhelfen – es geht darum,
+                    Teil einer Bewegung zu
+                    werden, die sich für dauerhafte Veränderungen einsetzt. Egal, ob Sie über spezielle Fähigkeiten
+                    verfügen oder einfach nur lern- und arbeitsbereit sind, hier gibt es einen Platz für Sie.</p>
+
+                <ul class="perks-list">
+                    <li>
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <div>
+                            <strong data-i18n="vol_perk1_h4">Globale Auswirkungen</strong>
+                            <p data-i18n="vol_perk1_p">Tragen Sie direkt zu Projekten bei, die Leben retten und weltweit
+                                Zukunftsperspektiven
+                                schaffen.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-users"></i>
+                        <div>
+                            <strong data-i18n="vol_perk2_h4">Gemeinschaft</strong>
+                            <p data-i18n="vol_perk2_p">Vernetzen Sie sich mit Gleichgesinnten, die Ihre Leidenschaft für
+                                humanitäre Arbeit
+                                teilen.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <strong data-i18n="vol_perk3_h4">Kompetenzaufbau</strong>
+                            <p data-i18n="vol_perk3_p">Sammeln Sie wertvolle Erfahrungen im Projektmanagement, in der
+                                Führung und in der
+                                Krisenreaktion.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-container fade-in delay-200">
+                <h3 data-i18n="vol_form_h3">Freiwilligen-Bewerbung</h3>
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Bewerbung eingereicht! Vielen Dank.');">
+                    <div class="form-group">
+                        <label for="name" data-i18n="vol_label_name">Vollständiger Name</label>
+                        <input type="text" id="name" required placeholder="Max Mustermann"
+                            data-i18n-placeholder="vol_ph_name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-i18n="vol_label_email">E-Mail-Adresse</label>
+                        <input type="email" id="email" required placeholder="max@beispiel.de"
+                            data-i18n-placeholder="vol_ph_email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-i18n="vol_label_phone">Telefonnummer</label>
+                        <input type="tel" id="phone" placeholder="+49 (0) 123 456789"
+                            data-i18n-placeholder="vol_ph_phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest" data-i18n="vol_label_interest">Interessengebiet</label>
+                        <select id="interest" required>
+                            <option value="" data-i18n="vol_field_opt_default">Wählen Sie einen Bereich...</option>
+                            <option value="education" data-i18n="vol_field_opt1">Bildung & Lehre</option>
+                            <option value="medical" data-i18n="vol_field_opt2">Medizin & Gesundheitswesen</option>
+                            <option value="logistics" data-i18n="vol_field_opt3">Logistik & Nothilfe</option>
+                            <option value="fundraising" data-i18n="vol_field_opt4">Spendenaktionen & Veranstaltungen
+                            </option>
+                            <option value="admin" data-i18n="vol_field_opt5">Administrative Unterstützung</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-i18n="vol_label_message">Warum möchten Sie uns beitreten?</label>
+                        <textarea id="message" required
+                            placeholder="Erzählen Sie uns kurz von Ihrer Motivation und relevanten Fähigkeiten..."
+                            data-i18n-placeholder="vol_ph_message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"
+                        data-i18n="vol_btn_submit">Bewerbung einreichen</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

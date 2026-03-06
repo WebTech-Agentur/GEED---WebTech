@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-section {
+            padding: 5rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            min-height: 90px;
+        }
+
+        .faq-question h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            padding: 0 2rem;
+            background-color: rgba(46, 163, 242, 0.02);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-color);
+        }
+
+        .faq-category {
+            margin-bottom: 4rem;
+        }
+
+        .faq-category h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" class="active" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="faq_header_h1">Häufig gestellte Fragen (FAQ)</h1>
+            <p style="max-width: 700px; margin: 0 auto;" data-i18n="faq_header_p">Hier finden Sie Antworten auf die
+                wichtigsten Fragen zu unserer
+                Arbeit.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <div class="container">
+
+            <div class="faq-category fade-in">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q1">Wer kann an euren Programmen teilnehmen?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a1">Unsere Programme richten sich an allem, unabhängig von Herkunft,
+                                Geschlecht oder
+                                Bildungsstand.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q2">Wo finden die Kurse und Aktivitäten statt?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a2">Unsere Programme finden je nach Angebot vor Ort, online oder in
+                                Kombination statt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category fade-in delay-100">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q3">In welchen Sprachen werden Kurse angeboten?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a3">Unsere Sprachkurse werden in<strong> Deutsch, Englisch und
+                                    Persisch</strong> angeboten.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q4">Wie arbeitet GEED?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a4">GEED arbeitet gemeinnützig und setzt auf Bildung, Unterstützung und
+                                internationale
+                                Zusammenarbeit, um positive gesellschaftliche Wirkung zu erzielen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category fade-in delay-200">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q5">Kann ich als Freiwilliger helfen?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a5">Absolut! Wir suchen immer engagierte Menschen, die uns entweder vor
+                                Ort in den
+                                Projekten
+                                oder digital (z. B. durch IT-Schulungen oder Beratung) unterstützen möchten. Schauen
+                                Sie
+                                auf unserer „Mach mit“-Seite vorbei.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-i18n="faq_q6">Wie kann ich mit GEED in Kontakt treten?</h3>
+                            <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="faq_a6">Sie können uns jederzeit über unsere Website, per E-Mail oder über
+                                unsere Kontaktseite
+                                erreichen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

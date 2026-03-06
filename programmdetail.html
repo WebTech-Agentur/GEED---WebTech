@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmdetails | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .details-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .detail-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            background: rgba(46, 163, 242, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        .detail-card h2 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .detail-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            padding: 0.5rem 0;
+        }
+
+        .detail-list i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        [data-theme="dark"] .detail-icon {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .detail-card {
+                padding: 2rem;
+            }
+
+            .detail-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="progdet_header_h1">Unsere Programme im Detail</h1>
+            <p style="max-width: 800px; margin: 20px auto 0; font-size: 1.2rem; line-height: 1.6;"
+                data-i18n="progdet_header_p">
+                Erfahren Sie mehr über die Bildungs- und Entwicklungsprogramme von GEED.
+                Wir bieten gezielte Unterstützung, um Menschen weltweit neue Chancen zu eröffnen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Program Details Section -->
+    <section>
+        <div class="container">
+            <div class="details-container">
+
+                <!-- 1. Sprachkurse -->
+                <div class="detail-card fade-in">
+                    <div class="detail-header">
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h2 data-i18n="progdet_card1_h2">Sprachkurse</h2>
+                    </div>
+                    <div class="detail-content">
+                        <p data-i18n="progdet_card1_p">
+                            Unsere Sprachkurse sind darauf ausgerichtet, Menschen dabei zu helfen, ihre
+                            Kommunikationsfähigkeiten
+                            grundlegend zu verbessern.Unsere Sprachkurse richten sich an Anfänger und Fortgeschrittene
+                            jeden Alters. Angeboten werden Englisch, Deutsch und Persisch. Sprache ist der Schlüssel zur
+                            erfolgreichen Integration und
+                            eröffnet
+                            vielfältige Möglichkeiten in Bildung und Beruf. Wir vermitteln Sprachkenntnisse
+                            effizient und praxisorientiert, sodass die Teilnehmenden schnell in Alltag, Beruf und
+                            Bildung kommunizieren können. Dabei liegt der Fokus auf
+                            Sprechen, Hören, Lesen und Schreiben, ergänzt durch interaktive Übungen und praxisnahe
+                            Aufgaben.
+                        </p>
+                        <ul class="detail-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card1_li1">Integration durch
+                                    Spracherwerb</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card1_li2">Neue Chancen
+                                    entdecken</span> </li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card1_li3">Kommunikation im
+                                    sozialen Umfeld</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card1_li4">Unterstützung im
+                                    Berufsalltag</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Digitale Kompetenzen und IT-Kurse -->
+                <div class="detail-card fade-in delay-100" style="border-left-color: var(--secondary-color);">
+                    <div class="detail-header">
+                        <div class="detail-icon"
+                            style="color: var(--secondary-color); background: rgba(45, 212, 191, 0.1);">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h2 style="color: var(--secondary-color);" data-i18n="progdet_card2_h2">Digitale Kompetenzen und
+                            IT-Kurse</h2>
+                    </div>
+                    <div class="detail-content">
+                        <p data-i18n="progdet_card2_p">
+                            In diesem Programm
+                            erwerben Teilnehmende wichtige digitale Fähigkeiten für Alltag,
+                            und Beruf. Dazu gehören der sichere Umgang mit Computer, Grundlagen der Programmirung
+                            (HTML, CSS, Java) ,Internet und digitalen Anwendungen.
+                            Der Unterricht ist praxisnah gestaltet und kombiniert Theorie mit vielen Übungen.
+                            Die Teilnehmenden arbeiten mit modernen Tools und lernen, digitale Aufgaben selbstständig zu
+                            lösen.
+                        </p>
+                        <ul class="detail-list">
+                            <li><i class="fa-solid fa-check"></i> <span
+                                    data-i18n="progdet_card2_li1">Computer-Grundlagen & Office-Anwendungen</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card2_li2">Sicherheit im
+                                    Internet & Datenschutz</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card2_li3">Nutzung digitaler
+                                    Tools im Alltag</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card2_li4">IT-Wissen für den
+                                    Berufseinstieg</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Persönliche Entwicklungskurse -->
+                <div class="detail-card fade-in delay-200" style="border-left-color: var(--accent-color);">
+                    <div class="detail-header">
+                        <div class="detail-icon"
+                            style="color: var(--accent-color); background: rgba(240, 123, 63, 0.1);">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h2 style="color: var(--accent-color);" data-i18n="progdet_card3_h2">Persönliche
+                            Entwicklungskurse</h2>
+                    </div>
+                    <div class="detail-content">
+                        <p data-i18n="progdet_card3_p">
+                            Dieses Programm unterstützt Menschen dabei, ihre Stärken zu erkennen, berufliche
+                            Perspektiven zu
+                            entwickeln und ihre persönlichen Ziele zu erreichen. Durch praxisnahe Beratung, Workshops
+                            und individuelle Coachings werden Selbstvertrauen, Motivation und wichtige berufliche
+                            Kompetenzen gefördert.
+                            Teilnehmende lernen, ihre Fähigkeiten besser einzuschätzen,
+                            Bewerbungsprozesse erfolgreich zu meistern und passende Ausbildungs- oder
+                            Arbeitsmöglichkeiten zu finden.
+                            Außerdem fördern wir Schlüsselkompetenzen wie Kommunikation, Zeitmanagement, Teamarbeit und
+                            Problemlösungsfähigkeiten. Ziel ist es, die individuelle Entwicklung zu stärken,
+                            neue Chancen im Beruf und Alltag zu eröffnen
+                            und die Teilnehmenden langfristig auf ihrem beruflichen und persönlichen Weg zu begleiten.
+                        </p>
+                        <ul class="detail-list">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card3_li1">Stärkung des
+                                    Selbstvertrauens</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card3_li2">Führungskompetenz
+                                    & Teamarbeit</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card3_li3">Kommunikation &
+                                    Konfliktlösung</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="progdet_card3_li4">Zielsetzung &
+                                    Zeitmanagement</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;" class="fade-in delay-300">
+                <a href="programs.html" class="btn btn-outline" data-i18n="btn_back_to_overview">Zurück zur
+                    Übersicht</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <ul>
+                        <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                        <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                        <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                        <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                        <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Hope City, 123 Charity Lane</p>
+                    <div class="social-icons" style="margin-top: 1rem;">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

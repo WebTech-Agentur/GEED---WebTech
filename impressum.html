@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | GEED</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Translations -->
+    <script src="translations.js"></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .impressum-section {
+            padding: 5rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .impressum-content {
+            background-color: var(--card-bg);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .impressum-content h2 {
+            color: var(--primary-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .impressum-content h2 i {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .impressum-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .impressum-content p {
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+            font-size: 1.05rem;
+        }
+
+        .impressum-content strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .impressum-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .impressum-content a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
+            </a>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                    <li><a href="programs.html" data-i18n="nav_programs">Programme</a></li>
+                    <li><a href="gallery.html" data-i18n="nav_gallery">Galerie</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="images/germany-flag.png" alt="DE" class="flag-img"> <i
+                            class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="de">
+                            <span><img src="images/germany-flag.png" alt="DE" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <span><img src="images/usa-flag.png" alt="US" class="flag-img"></span>
+                        </div>
+                        <div class="lang-option" data-lang="fa">
+                            <span><img src="images/iran-flag.png" alt="IR" class="flag-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn btn-accent" style="padding: 0.5rem 1rem;"
+                    data-i18n="nav_donate">Spenden</a>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1 data-i18n="page_title_impressum">Impressum</h1>
+            <p style="max-width: 700px; margin: 0 auto;" data-i18n="imp_hero_p">Rechtliche Informationen zur GEED
+                Organisation.</p>
+        </div>
+    </section>
+
+    <!-- Impressum Content -->
+    <section class="impressum-section">
+        <div class="container">
+            <div class="impressum-content fade-in delay-100">
+                <h2><i class="fa-solid fa-building"></i> <span data-i18n="imp_sec1_h2">Angaben gemäß § 5 TMG</span></h2>
+                <p data-i18n="imp_sec1_p">
+                    <strong>Global Education & Empowerment Development (GEED) e.V.</strong><br>
+                    Adresse: (Straße, Hausnummer)<br>
+                    (PLZ, Stadt, Land)<br><br>
+                    E-Mail: (offizielle Kontakt-E-Mail einfügen)<br>
+                    Telefon: (optional – Telefonnummer einfügen)
+                </p>
+
+                <h2><i class="fa-solid fa-user-tie"></i> <span data-i18n="imp_sec2_h2">Vertreten durch</span></h2>
+                <p data-i18n="imp_sec2_p"><strong>Vorstandsvorsitzende/-r:</strong> GEED – Projektleitung /
+                    Organisationsteam<br>
+                    (Global Education & Empowerment Development)</p>
+
+                <h2><i class="fa-solid fa-envelope-open-text"></i> <span data-i18n="imp_sec3_h2">Kontakt</span></h2>
+                <p data-i18n="imp_sec3_p">
+                    <strong>Telefon:</strong> +1 (555) 123-4567<br>
+                    <strong>E-Mail:</strong> <a href="mailto:info@geed-charity.org">info@geed-charity.org</a>
+                </p>
+
+                <h2><i class="fa-solid fa-id-card"></i> <span data-i18n="imp_sec4_h2">Registereintrag</span></h2>
+                <p data-i18n="imp_sec4_p">
+                    Eintragung im Vereinsregister.<br>
+                    <strong>Registergericht:</strong> [Amtsgericht Ort]<br>
+                    <strong>Registernummer:</strong> VR [Nummer]
+                </p>
+
+                <h2><i class="fa-solid fa-pen-nib"></i> <span data-i18n="imp_sec5_h2">Redaktionell verantwortlich</span>
+                </h2>
+                <p data-i18n="imp_sec5_p">[Name der verantwortlichen Person]</p>
+
+                <h2><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="imp_sec6_h2">EU-Streitschlichtung</span>
+                </h2>
+                <p data-i18n="imp_sec6_p">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung
+                    (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/"
+                        target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+                <h2><i class="fa-solid fa-gavel"></i> <span data-i18n="imp_sec7_h2">Verbraucherstreitbeilegung</span>
+                </h2>
+                <p data-i18n="imp_sec7_p">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
+                    einer
+                    Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="footer_about_title">Über GEED</h3>
+                    <p data-i18n="footer_about_text">Global Education & Empowerment Development (GEED) ist eine
+                        gemeinnützige Organisation, die sich
+                        für die Schaffung nachhaltiger Veränderungen, die Verbesserung der Bildung und die Stärkung
+                        gefährdeter Gemeinschaften weltweit einsetzt.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
+                    <a>
+                        <ul>
+                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                        </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_join_title">Mach mit</h3>
+                    <ul>
+                        <li><a href="donate.html" data-i18n="btn_donate">Spenden Sie</a></li>
+                        <li><a href="volunteer.html" data-i18n="btn_volunteer">Treten Sie unserem Team bei</a></li>
+                        <li><a href="#" data-i18n="footer_partnerships">Unternehmenspartnerschaften</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
+                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_rights">&copy; 2026 GEED Charity. Alle Rechte vorbehalten. Leben durch Mitgefühl
+                    und Taten verändern.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
