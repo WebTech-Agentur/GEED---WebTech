@@ -437,7 +437,7 @@ window.translations = {
         nav_about: "درباره ما",
         nav_programs: "برنامه‌ها",
         nav_gallery: "گالری",
-        nav_faq: "سوالات متداول",
+        nav_faq: "سوالات متداول (FAQ)",
         nav_donate: "حمایت مالی",
         nav_program_details: "جزئیات برنامه",
         nav_contact: "تماس با ما",

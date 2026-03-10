@@ -155,9 +155,21 @@
         }
 
         /* Header override for hero section readability */
-        #header:not(.sticky) .nav-container a,
-        #header:not(.sticky) .nav-container i {
-            color: white !important;
+        #header:not(.sticky) .logo,
+        #header:not(.sticky) .theme-toggle,
+        #header:not(.sticky) .mobile-menu-btn,
+        #header:not(.sticky) .lang-btn {
+            color: #ffffff !important;
+        }
+
+        @media (min-width: 901px) {
+            #header:not(.sticky) nav a {
+                color: #ffffff !important;
+            }
+
+            #header:not(.sticky) nav a::before {
+                background-color: #ffffff;
+            }
         }
 
         @media (max-width: 768px) {

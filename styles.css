@@ -469,9 +469,79 @@ footer {
     nav ul.open {
         right: 0;
     }
+
+    /* Fix RTL mobile menu stacking */
+    [dir="rtl"] nav ul {
+        flex-direction: column !important;
+        align-items: center;
+        /* or flex-start based on preference */
+    }
+
+    /* Fix programs page inline styles for tablet/mobile */
+    .values-section,
+    .programs-offer-section {
+        padding: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .values-section h2,
+    .programs-offer-section h2 {
+        font-size: 2rem !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .values-section p,
+    .programs-offer-section p {
+        font-size: 1rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .values-section>div {
+        flex-direction: column;
+        gap: 1.5rem !important;
+    }
+
+    .values-section>div>div {
+        min-width: 100% !important;
+    }
 }
 
 @media (max-width: 480px) {
+
+    /* --- Mobile Typography --- */
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Fix oversized Farsi text on mobile */
+    [dir="rtl"] h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    [dir="rtl"] h2 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    [dir="rtl"] h3 {
+        font-size: 1.3rem;
+    }
+
     .logo img {
         height: 80px;
         /* Prevent huge logo from pushing content */

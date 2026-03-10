@@ -31,13 +31,20 @@
 
         /* Homepage Header Visibility Over Hero */
         #header:not(.sticky) .logo,
-        #header:not(.sticky) nav a,
-        #header:not(.sticky) .theme-toggle {
+        #header:not(.sticky) .theme-toggle,
+        #header:not(.sticky) .mobile-menu-btn,
+        #header:not(.sticky) .lang-btn {
             color: #ffffff !important;
         }
 
-        #header:not(.sticky) nav a::before {
-            background-color: #ffffff;
+        @media (min-width: 901px) {
+            #header:not(.sticky) nav a {
+                color: #ffffff !important;
+            }
+
+            #header:not(.sticky) nav a::before {
+                background-color: #ffffff;
+            }
         }
 
         #header:not(.sticky) .logo i {
