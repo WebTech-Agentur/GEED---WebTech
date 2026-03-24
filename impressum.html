@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,13 +23,11 @@
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
-
         .impressum-section {
             padding: 5rem 0;
             max-width: 900px;
             margin: 0 auto;
         }
-
         .impressum-content {
             background-color: var(--card-bg);
             padding: 4rem;
@@ -38,7 +35,6 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
         }
-
         .impressum-content h2 {
             color: var(--primary-color);
             margin-top: 2.5rem;
@@ -50,50 +46,56 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
-
         .impressum-content h2 i {
             font-size: 1.4rem;
             color: var(--accent-color);
         }
-
         .impressum-content h2:first-child {
             margin-top: 0;
         }
-
+        .impressum-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
         .impressum-content p {
             line-height: 1.8;
             margin-bottom: 1.2rem;
             color: var(--text-color);
             font-size: 1.05rem;
         }
-
         .impressum-content strong {
             color: var(--text-color);
             font-weight: 600;
         }
-
         .impressum-content a {
             color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
         .impressum-content a:hover {
             color: var(--accent-color);
             text-decoration: underline;
         }
+        .fictional-note {
+            margin-top: 3rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.75rem;
+            color: #b0b8c4;
+            line-height: 1.6;
+        }
     </style>
 </head>
-
 <body>
-
     <!-- Header -->
     <header id="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <img src="images/logo-GEED.png" alt="GEED Foundation Logo">
             </a>
-
             <nav>
                 <ul id="nav-links">
                     <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
@@ -103,12 +105,10 @@
                     <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
                 </ul>
             </nav>
-
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <!-- Language Switcher -->
                 <div class="lang-switcher" id="lang-switcher">
                     <button class="lang-btn" id="lang-btn">
@@ -139,9 +139,8 @@
     <!-- Page Header -->
     <section class="page-header fade-in">
         <div class="container">
-            <h1 data-i18n="page_title_impressum">Impressum</h1>
-            <p style="max-width: 700px; margin: 0 auto;" data-i18n="imp_hero_p">Rechtliche Informationen zur GEED
-                Organisation.</p>
+            <h1>Impressum</h1>
+            <p style="max-width: 700px; margin: 0 auto;">Rechtliche Informationen zur GEED Organisation.</p>
         </div>
     </section>
 
@@ -149,49 +148,52 @@
     <section class="impressum-section">
         <div class="container">
             <div class="impressum-content fade-in delay-100">
-                <h2><i class="fa-solid fa-building"></i> <span data-i18n="imp_sec1_h2">Angaben gemäß § 5 TMG</span></h2>
-                <p data-i18n="imp_sec1_p">
-                    <strong>Global Education & Empowerment Development (GEED) e.V.</strong><br>
-                    Adresse:Farnstr. 2, D-90480 Nürnberg<br>
-                    (PLZ, Stadt, Land)<br><br>
-                    E-Mail: (offizielle Kontakt-E-Mail einfügen)<br>
-                    Telefon: (optional – Telefonnummer einfügen)
+
+                <h2><i class="fa-solid fa-building"></i> Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h2>
+                <p>
+                    <strong>WebTech Agentur</strong><br>
+                    IT. Zentrum Lingen:<br>
+                    Kaiserstraße 10B<br>
+                    49809 Lingen (Ems)<br>
+                    Deutschland
                 </p>
 
-                <h2><i class="fa-solid fa-user-tie"></i> <span data-i18n="imp_sec2_h2">Vertreten durch</span></h2>
-                <p data-i18n="imp_sec2_p"><strong>Vorstandsvorsitzende/-r:</strong> GEED – Projektleitung /
-                    Organisationsteam<br>
-                    (Global Education & Empowerment Development)</p>
-
-                <h2><i class="fa-solid fa-envelope-open-text"></i> <span data-i18n="imp_sec3_h2">Kontakt</span></h2>
-                <p data-i18n="imp_sec3_p">
-                    <strong>Telefon:</strong> +1 (555) 123-4567<br>
-                    <strong>E-Mail:</strong> <a href="mailto:info@geed-charity.org">info@geed-charity.org</a>
+                <h2><i class="fa-solid fa-envelope-open-text"></i> Kontakt</h2>
+                <p>
+                    <strong>Telefon:</strong> 0591 14487-178<br>
+                    <strong>E-Mail:</strong> info(at)webtech(-)agentur.de<br>
+                    <strong>Web:</strong> <a href="https://www.webtech-agentur.de" target="_blank" rel="noopener noreferrer">www.webtech-agentur.de</a>
                 </p>
 
-                <h2><i class="fa-solid fa-id-card"></i> <span data-i18n="imp_sec4_h2">Registereintrag</span></h2>
-                <p data-i18n="imp_sec4_p">
-                    Eintragung im Vereinsregister.<br>
-                    <strong>Registergericht:</strong> [Amtsgericht Ort]<br>
-                    <strong>Registernummer:</strong> VR [Nummer]
-                </p>
-
-                <h2><i class="fa-solid fa-pen-nib"></i> <span data-i18n="imp_sec5_h2">Redaktionell verantwortlich</span>
-                </h2>
-                <p data-i18n="imp_sec5_p">[Name der verantwortlichen Person]</p>
-
-                <h2><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="imp_sec6_h2">EU-Streitschlichtung</span>
-                </h2>
-                <p data-i18n="imp_sec6_p">Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung
-                    (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/"
-                        target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+                <h2><i class="fa-solid fa-scale-balanced"></i> EU-Streitschlichtung</h2>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
                     Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
 
-                <h2><i class="fa-solid fa-gavel"></i> <span data-i18n="imp_sec7_h2">Verbraucherstreitbeilegung</span>
-                </h2>
-                <p data-i18n="imp_sec7_p">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
-                    einer
+                <h2><i class="fa-solid fa-gavel"></i> Verbraucherstreitbeilegung</h2>
+                <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
                     Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+                <h2><i class="fa-solid fa-shield-halved"></i> Disclaimer – Rechtliche Hinweise</h2>
+
+                <h3>§ 1 Warnhinweis zu Inhalten</h3>
+                <p>Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der bereitgestellten kostenlosen und frei zugänglichen journalistischen Ratgeber und Nachrichten. Namentlich gekennzeichnete Beiträge geben die Meinung des jeweiligen Autors und nicht immer die Meinung des Anbieters wieder. Allein durch den Aufruf der kostenlosen und frei zugänglichen Inhalte kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande, insoweit fehlt es am Rechtsbindungswillen des Anbieters.</p>
+
+                <h3>§ 2 Externe Links</h3>
+                <p>Diese Website enthält Verknüpfungen zu Websites Dritter („externe Links"). Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.</p>
+
+                <h3>§ 3 Urheber- und Leistungsschutzrechte</h3>
+                <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt.</p>
+                <p>Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.</p>
+
+                <h3>§ 4 Besondere Nutzungsbedingungen</h3>
+                <p>Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Paragraphen abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.</p>
+
+                <!-- Subtle fictional notice -->
+                <p class="fictional-note">
+                    Hinweis: Diese Website ist ein Demoprojekt und wurde ausschließlich zu Präsentationszwecken erstellt. Alle dargestellten Inhalte, Personen und Angaben sind fiktiver Natur.
+                </p>
+
             </div>
         </div>
     </section>
@@ -209,16 +211,15 @@
                 </div>
                 <div class="footer-col">
                     <h3 data-i18n="footer_links_title">Schnellzugriff</h3>
-                    <a>
-                        <ul>
-                            <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
-                            <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
-                            <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
-                            <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
-                            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
-                            <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
-                            <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
-                        </ul>
+                    <ul>
+                        <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+                        <li><a href="programs.html" data-i18n="nav_programs">Unsere Projekte</a></li>
+                        <li><a href="programmdetail.html" data-i18n="nav_program_details">Programmdetails</a></li>
+                        <li><a href="volunteer.html" data-i18n="nav_volunteer">Freiwilligenarbeit</a></li>
+                        <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+                        <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h3 data-i18n="footer_join_title">Mach mit</h3>
@@ -230,9 +231,10 @@
                 </div>
                 <div class="footer-col">
                     <h3 data-i18n="footer_contact_title">Kontaktinformationen</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> 123 Charity Lane, Hope City</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@geed-charity.org</p>
-                    <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Kaiserstraße 10B, 49809 Lingen (Ems)</p>
+                    <p><i class="fa-solid fa-envelope"></i> info(at)webtech(-)agentur.de</p>
+                    <p><i class="fa-solid fa-phone"></i> 0591 14487-178</p>
+                    <p><i class="fa-solid fa-globe"></i> <a href="https://www.webtech-agentur.de" target="_blank" rel="noopener noreferrer">www.webtech-agentur.de</a></p>
                     <div class="social-icons">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -247,8 +249,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
-
 </html>
