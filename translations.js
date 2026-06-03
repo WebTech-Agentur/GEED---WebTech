@@ -212,6 +212,18 @@ window.translations = {
         imp_sec7_h2: "Verbraucherstreitbeilegung",
         imp_sec7_p: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
 
+        imp_disclaimer_title: "Disclaimer – Rechtliche Hinweise",
+        imp_sec_warn_title: "§ 1 Warnhinweis zu Inhalten",
+        imp_sec_warn_p: "Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der bereitgestellten kostenlosen und frei zugänglichen journalistischen Ratgeber und Nachrichten. Namentlich gekennzeichnete Beiträge geben die Meinung des jeweiligen Autors und nicht immer die Meinung des Anbieters wieder. Allein durch den Aufruf der kostenlosen und frei zugänglichen Inhalte kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande, insoweit fehlt es am Rechtsbindungswillen des Anbieters.",
+        imp_sec_links_title: "§ 2 Externe Links",
+        imp_sec_links_p: "Diese Website enthält Verknüpfungen zu Websites Dritter („externe Links“). Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.",
+        imp_sec_copy_title: "§ 3 Urheber- und Leistungsschutzrechte",
+        imp_sec_copy_p1: "Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt.",
+        imp_sec_copy_p2: "Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.",
+        imp_sec_terms_title: "§ 4 Besondere Nutzungsbedingungen",
+        imp_sec_terms_p: "Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Paragraphen abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.",
+        imp_fictional_note: "Hinweis: Diese Website ist ein Demoprojekt und wurde ausschließlich zu Präsentationszwecken erstellt. Alle dargestellten Inhalte, Personen und Angaben sind fiktiver Natur.",
+
         gal_hero_h1: "Unsere Wirkungs-Galerie",
         gal_hero_p: "Ein Bild sagt mehr als tausend Worte. Sehen Sie sich das Lächeln, die harte Arbeit und die reale Wirkung an, die Ihre Unterstützung in die Gemeinden bringt."
     },
@@ -429,6 +441,18 @@ window.translations = {
         imp_sec7_h2: "Consumer Dispute Resolution",
         imp_sec7_p: "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
 
+        imp_disclaimer_title: "Disclaimer – Legal Notice",
+        imp_sec_warn_title: "§ 1 Warning notice regarding content",
+        imp_sec_warn_p: "The free and freely accessible content of this website was created with the greatest possible care. However, the provider of this website does not guarantee the accuracy and timeliness of the free and freely accessible journalistic guides and news provided. Contributions identified by name reflect the opinion of the respective author and not always the opinion of the provider. Simply accessing the free and freely accessible content does not establish any contractual relationship between the user and the provider; in this respect, there is no intention on the part of the provider to enter into legal obligations.",
+        imp_sec_links_title: "§ 2 External Links",
+        imp_sec_links_p: "This website contains links to third-party websites ('external links'). These websites are the liability of their respective operators. When the external links were first linked, the provider checked the external content for any legal violations. At that time, no legal violations were apparent. The provider has no influence on the current and future design and content of the linked pages. The inclusion of external links does not imply that the provider adopts the content behind the reference or link as their own. Constant monitoring of external links is not reasonable for the provider without concrete evidence of legal violations. However, if any legal violations become known, such external links will be deleted immediately.",
+        imp_sec_copy_title: "§ 3 Copyright and Ancillary Copyright Laws",
+        imp_sec_copy_p1: "The content published on this website is subject to German copyright and ancillary copyright law. Any use not permitted by German copyright and ancillary copyright law requires the prior written consent of the provider or the respective rights holder. This applies in particular to the duplication, editing, translation, storage, processing or reproduction of content in databases or other electronic media and systems. Third-party content and rights are marked as such. The unauthorized duplication or distribution of individual contents or complete pages is not permitted and is punishable by law. Only the creation of copies and downloads for personal, private, and non-commercial use is permitted.",
+        imp_sec_copy_p2: "The presentation of this website in external frames is only permitted with written permission.",
+        imp_sec_terms_title: "§ 4 Special Terms of Use",
+        imp_sec_terms_p: "Insofar as special conditions for individual uses of this website deviate from the aforementioned paragraphs, this will be expressly pointed out in the appropriate place. In this case, the special terms of use shall apply in the respective individual case.",
+        imp_fictional_note: "Note: This website is a demo project and was created solely for presentation purposes. All content, people, and details shown are fictional.",
+
         gal_hero_h1: "Our Impact Gallery",
         gal_hero_p: "A picture is worth a thousand words. See the smiles, the hard work, and the real impact your support brings to the communities."
     },
@@ -644,6 +668,18 @@ window.translations = {
         imp_sec6_p: "کمیسیون اروپا پلتفرمی برای حل‌وفصل اختلافات آنلاین (ODR) ارائه می‌دهد: <a href='https://ec.europa.eu/consumers/odr/' target='_blank'>https://ec.europa.eu/consumers/odr/</a>.<br>آدرس ایمیل ما در بالای این صفحه اطلاعات حقوقی موجود است.",
         imp_sec7_h2: "حل‌وفصل اختلافات مصرف‌کنندگان",
         imp_sec7_p: "ما مایل و یا ملزم به شرکت در رویه حل اختلاف در مقابل یک هیئت داوری مصرف‌کننده نیستیم.",
+
+        imp_disclaimer_title: "سلب مسئولیت – نکات حقوقی",
+        imp_sec_warn_title: "بخش ۱: هشدار در مورد محتوا",
+        imp_sec_warn_p: "مطالب رایگان و با دسترسی آزاد این وب‌سایت با بیشترین دقت ممکن تهیه شده‌اند. با این حال، ارائه‌دهنده این وب‌سایت هیچ‌گونه تضمینی در مورد صحت و به‌روز بودن راهنماها و اخبار مطبوعاتی رایگان و با دسترسی آزاد ارائه نمی‌دهد. مقالاتی که نام نویسنده در آن‌ها ذکر شده است، منعکس‌کننده نظر نویسنده مربوطه بوده و لزوماً نظر ارائه‌دهنده وب‌سایت نیستند. صرف دسترسی به مطالب رایگان و با دسترسی آزاد، هیچ‌گونه رابطه قراردادی بین کاربر و ارائه‌دهنده ایجاد نمی‌کند و از این جهت، هیچ اراده‌ای از سوی ارائه‌دهنده برای ایجاد تعهدات قانونی وجود ندارد.",
+        imp_sec_links_title: "بخش ۲: لینک‌های خارجی",
+        imp_sec_links_p: "این وب‌سایت حاوی پیوندهایی به وب‌سایت‌های ثالث («لینک‌های خارجی») است. مسئولیت این وب‌سایت‌ها بر عهده اپراتورهای مربوطه است. ارائه‌دهنده وب‌سایت هنگام اولین پیوند دهی لینک‌های خارجی، محتوای خارجی را از نظر وجود هرگونه تخلف قانونی بررسی کرده است. در آن زمان هیچ تخلف قانونی مشهودی وجود نداشت. ارائه‌دهنده هیچ نفوذی بر طراحی و محتوای فعلی و آینده صفحات لینک‌شده ندارد. قرار دادن لینک‌های خارجی به این معنی نیست که ارائه‌دهنده محتوای پشت مرجع یا لینک را متعلق به خود می‌داند. نظارت مداوم بر لینک‌های خارجی بدون شواهد مشخص از تخلفات قانونی برای ارائه‌دهنده منطقی نیست. با این حال، در صورت اطلاع از هرگونه تخلف قانونی، چنین لینک‌های خارجی بلافاصله حذف خواهند شد.",
+        imp_sec_copy_title: "بخش ۳: حقوق مالکیت معنوی و کپی‌رایت",
+        imp_sec_copy_p1: "مطالب منتشرشده در این وب‌سایت مشمول قوانین کپی‌رایت و حقوق مالکیت معنوی آلمان است. هرگونه استفاده‌ای که توسط این قوانین مجاز شمرده نشده باشد، نیاز به موافقت کتبی قبلی ارائه‌دهنده یا دارنده حقوق مربوطه دارد. این امر به ویژه در مورد تکثیر، ویرایش، ترجمه، ذخیره‌سازی، پردازش یا بازتولید محتوا در پایگاه‌های داده یا سایر رسانه‌ها و سیستم‌های الکترونیکی صدق می‌کند. محتوا و حقوق اشخاص ثالث به عنوان چنین مواردی مشخص شده‌اند. تکثیر یا توزیع غیرمجاز مطالب مجزا یا کل صفحات مجاز نبوده و قابل مجازات است. تنها تهیه کپی و دانلود برای استفاده شخصی، خصوصی و غیرتجاری مجاز است.",
+        imp_sec_copy_p2: "نمایش این وب‌سایت در فریم‌های خارجی (iframe) تنها با اجازه کتبی مجاز است.",
+        imp_sec_terms_title: "بخش ۴: شرایط خاص استفاده",
+        imp_sec_terms_p: "تا جایی که شرایط خاص برای استفاده‌های فردی از این وب‌سایت با بندهای فوق‌الذکر مغایرت داشته باشد، این موضوع به صراحت در محل مناسب ذکر خواهد شد. در این صورت، شرایط خاص استفاده در هر مورد خاص اعمال می‌شود.",
+        imp_fictional_note: "توجه: این وب‌سایت یک پروژه دمو است و صرفاً برای اهداف ارائه ایجاد شده است. تمام محتوا، افراد و اطلاعات نمایش داده شده ماهیت فرضی دارند.",
 
         gal_hero_h1: "گالری تأثیرات ما",
         gal_hero_p: "یک تصویر بیش از هزار کلمه ارزش دارد. لبخندها، کار سخت و تأثیر واقعی که حمایت شما برای جوامع به ارمغان می‌آورد را ببینید."

@@ -308,36 +308,105 @@
                     </div>
                 </div>
             </div>
-            <div class="mission-img-container"
-                style="position: relative; padding: 2rem; overflow: visible; display: flex; justify-content: center; align-items: center; min-height: 450px;">
+            <div class="mission-img-container">
                 <!-- Animated Background Glow -->
-                <div
-                    style="position: absolute; width: 120%; height: 120%; background: radial-gradient(circle at center, rgba(46, 163, 242, 0.05) 0%, transparent 70%);">
-                </div>
+                <div class="mission-glow"></div>
 
-                <div class="animated-tree"
-                    style="position: relative; display: flex; flex-direction: column; align-items: center; z-index: 5;">
+                <div class="animated-tree">
                     <!-- Tree Trunk / Symbol of Strength -->
-                    <div class="tree-trunk"
-                        style="font-size: 15rem; color: #48bb78; animation: treeSway 5s ease-in-out infinite;">
+                    <div class="tree-trunk">
                         <i class="fa-solid fa-seedling"></i>
                     </div>
 
                     <!-- Floating Intelligent Icons -->
-                    <div class="floating-elements"
-                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
-                        <i class="fa-solid fa-book-open"
-                            style="position: absolute; top: -15%; left: -10%; font-size: 3rem; color: var(--primary-color); animation: elementFloat 4s ease-in-out infinite;"></i>
-                        <i class="fa-solid fa-gear"
-                            style="position: absolute; top: 15%; right: -15%; font-size: 2.5rem; color: var(--secondary-color); animation: elementFloat 6s ease-in-out infinite 1s; opacity: 0.8;"></i>
-                        <i class="fa-solid fa-graduation-cap"
-                            style="position: absolute; bottom: 40%; left: -30%; font-size: 3rem; color: var(--accent-color); animation: elementFloat 5s ease-in-out infinite 0.5s;"></i>
-                        <i class="fa-solid fa-globe"
-                            style="position: absolute; bottom: 5%; right: -25%; font-size: 3rem; color: var(--primary-color); animation: elementFloat 7s ease-in-out infinite 1.5s; opacity: 0.7;"></i>
+                    <div class="floating-elements">
+                        <i class="fa-solid fa-book-open float-icon-1"></i>
+                        <i class="fa-solid fa-gear float-icon-2"></i>
+                        <i class="fa-solid fa-graduation-cap float-icon-3"></i>
+                        <i class="fa-solid fa-globe float-icon-4"></i>
                     </div>
                 </div>
 
                 <style>
+                    .mission-img-container {
+                        position: relative;
+                        padding: 2rem;
+                        overflow: visible;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 450px;
+                    }
+
+                    .mission-glow {
+                        position: absolute;
+                        width: 120%;
+                        height: 120%;
+                        background: radial-gradient(circle at center, rgba(46, 163, 242, 0.05) 0%, transparent 70%);
+                        pointer-events: none;
+                    }
+
+                    .animated-tree {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        z-index: 5;
+                    }
+
+                    .tree-trunk {
+                        font-size: 15rem;
+                        color: #48bb78;
+                        animation: treeSway 5s ease-in-out infinite;
+                    }
+
+                    .floating-elements {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        pointer-events: none;
+                    }
+
+                    .floating-elements i {
+                        position: absolute;
+                    }
+
+                    .float-icon-1 {
+                        top: -15%;
+                        left: -10%;
+                        font-size: 3rem;
+                        color: var(--primary-color);
+                        animation: elementFloat 4s ease-in-out infinite;
+                    }
+
+                    .float-icon-2 {
+                        top: 15%;
+                        right: -15%;
+                        font-size: 2.5rem;
+                        color: var(--secondary-color);
+                        animation: elementFloat 6s ease-in-out infinite 1s;
+                        opacity: 0.8;
+                    }
+
+                    .float-icon-3 {
+                        bottom: 40%;
+                        left: -30%;
+                        font-size: 3rem;
+                        color: var(--accent-color);
+                        animation: elementFloat 5s ease-in-out infinite 0.5s;
+                    }
+
+                    .float-icon-4 {
+                        bottom: 5%;
+                        right: -25%;
+                        font-size: 3rem;
+                        color: var(--primary-color);
+                        animation: elementFloat 7s ease-in-out infinite 1.5s;
+                        opacity: 0.7;
+                    }
+
                     @keyframes treeSway {
 
                         0%,
@@ -369,6 +438,50 @@
 
                     .feature-icon {
                         transition: all 0.3s ease;
+                    }
+
+                    /* Mobile Sizing Adjustments (320px - 480px) */
+                    @media (max-width: 768px) {
+                        .mission-img-container {
+                            min-height: 280px;
+                            padding: 1rem;
+                        }
+                        .tree-trunk {
+                            font-size: 8.5rem;
+                        }
+                        .float-icon-1 {
+                            font-size: 1.8rem;
+                        }
+                        .float-icon-2 {
+                            font-size: 1.5rem;
+                        }
+                        .float-icon-3 {
+                            font-size: 1.8rem;
+                        }
+                        .float-icon-4 {
+                            font-size: 1.8rem;
+                        }
+                    }
+
+                    @media (max-width: 400px) {
+                        .mission-img-container {
+                            min-height: 240px;
+                        }
+                        .tree-trunk {
+                            font-size: 7.5rem;
+                        }
+                        .float-icon-1 {
+                            font-size: 1.5rem;
+                        }
+                        .float-icon-2 {
+                            font-size: 1.3rem;
+                        }
+                        .float-icon-3 {
+                            font-size: 1.5rem;
+                        }
+                        .float-icon-4 {
+                            font-size: 1.5rem;
+                        }
                     }
                 </style>
             </div>
